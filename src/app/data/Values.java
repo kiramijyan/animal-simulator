@@ -5,7 +5,7 @@ public class Values {
 	/**
 	 * Total Animal Numbers
 	 */
-	public final static int TOTAL_ANIMALS = 25;
+	public final static int TOTAL_ANIMALS = 15;
 	
 	/**
 	 * Number of grids that each animal will move in one unit of time

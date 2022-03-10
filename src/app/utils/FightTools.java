@@ -45,7 +45,6 @@ public class FightTools {
 				} else if (!localList.get(i).getType().equals(localList.get(i + 1).getType())){
 					fightTwoAnimals(localList.get(i), localList.get(i + 1), localList);
 				}			
-				Thread.sleep(500);
 			}
 			fightInGrid(localList);
 		}
@@ -64,8 +63,10 @@ public class FightTools {
 		int number = rand.nextInt((100 - 1) + 1) + 1; // 1 and 2		
 		System.out.println("Figh        " + a.getID_Animal() + " " + a.getType() + " vs " + b.getID_Animal() + " " + b.getType());
 		System.out.println("Coordinates " + a.getCoordinates());
+		
+		
 		if(number % 2 == 0) {
-			System.out.print("Winner " + b.info() + ". ");
+			System.out.println("Winner " + b.info() + ". ");
 			System.out.println("Dead " + a.info());
 			Thread.sleep(500);
 			DB.animalList.remove(a);
@@ -73,7 +74,7 @@ public class FightTools {
 			a.setCoordinates(new Coordinates(-1, -1));
 			a.setLive(false);
 		} else {
-			System.out.print("Winner " + a.info() + ". ");
+			System.out.println("Winner " + a.info() + ". ");
 			System.out.println("Dead " + b.info());
 			Thread.sleep(500);
 			DB.animalList.remove(b);
@@ -91,7 +92,7 @@ public class FightTools {
 	 * @return
 	 * @throws InterruptedException
 	 */
-	public static boolean isListFighting(LinkedList<Animal> localList) throws InterruptedException {	
+	public static boolean isListFighting(LinkedList<Animal> localList) {	
 		if(localList.size() < 2) {
 			return false;
 		}
@@ -112,7 +113,7 @@ public class FightTools {
 	 * @param localList
 	 */
 	public static void makeZombie(Animal animal, LinkedList<Animal> localList) {
-		System.err.println(animal.info() + " Become zombie:");
+		System.out.println(animal.info() + " Become zombie:");
 		int id = animal.getID_Animal();
 		Zombie zombie = new Zombie(TYPE_ZOMBIE, SPEED_ZOMBIE);
 		zombie.setID_Animal(id);

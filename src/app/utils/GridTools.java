@@ -27,9 +27,9 @@ public class GridTools {
 	 */
 	public static void moveAnimal() throws InterruptedException {
 		for(int i = 0; i < DB.animalList.size(); i++) {
-			int random = (int) (Math.random() * 4);
+			int randomDirection = (int) (Math.random() * 4);
 			removeAnimalFromGridList(DB.animalList.get(i));
-			MoveTools.move(DB.animalList.get(i), random, DB.animalList.get(i).getSpeed());
+			MoveTools.move(DB.animalList.get(i), randomDirection);
 		}
 	}
 	

@@ -10,21 +10,24 @@ public class MoveTools {
 
 	public static boolean flagLeftRight = true;
 	
-	public static void move(Animal animal, int random, int speed) {       
+	public static void move(Animal animal, int randomDirection) {       
 		
 		if(animal.isLive()) {
 			int x = 0;  
-	        while(x < speed) {
-	        	if(random == 0) { moveLeft(animal); }
-	            if(random == 1) { moveRigth(animal); }
-	            if(random == 2) { moveDown(animal); }
-	            if(random == 3) { moveUp(animal); }
+	        while(x < animal.getSpeed()) {
+	        	if(randomDirection == 0) { moveLeft(animal); }
+	            if(randomDirection == 1) { moveRigth(animal); }
+	            if(randomDirection == 2) { moveDown(animal); }
+	            if(randomDirection == 3) { moveUp(animal); }
 				x++;
 			}
 		}
 	}
 	
-	
+	/**
+	 * Move algorithm
+	 * @param animal
+	 */
 	public static void moveDown(Animal animal) {
 		int aY = animal.getCoordinates().getY(); 
 		// System.out.print("Down :");

@@ -18,19 +18,20 @@ public class Printer {
 	public static void printMatrix() throws InterruptedException {
 		for(int y = 0; y < GRID_Y; y++) {
 			for(int x = 0; x < GRID_X; x++) {
-				Thread.sleep(70);
+				//Thread.sleep(70);
 				if(DB.gridMatrix[x][y].getAnimalList().isEmpty()) {
 					
 					System.out.print("|  °  |");
 				} else if(DB.gridMatrix[x][y].getAnimalList().size() == 1){
 					//Thread.sleep(70);
 					String id = String.format("%02d",DB.gridMatrix[x][y].getAnimalList().get(0).getID_Animal());
-					System.err.print("|" + DB.gridMatrix[x][y].getAnimalList().get(0).getType() + "-" + id +" |");
+					System.out.print("|" + DB.gridMatrix[x][y].getAnimalList().get(0).getType() + "  " + id +"|");
 				} else {
 					//Thread.sleep(70);
-					System.err.print("| *" + DB.gridMatrix[x][y].getAnimalList().size() + "* |");
+					System.out.print("|  " + DB.gridMatrix[x][y].getAnimalList().size() + "  |");
 				}
 			}
+			Thread.sleep(70);
 			System.out.println();
 		}
 		System.out.println();
@@ -43,14 +44,13 @@ public class Printer {
 		System.out.println();
 	}
 	public static void printExistingAnimals() {
-		
 		for(int i = 0; i < DB.animalList.size(); i++) {
 			System.out.println(DB.animalList.get(i).info());
 		}
 	}
 	
 	public static void printAnimalListInfo(Grid grid) {
-		System.out.print("" + grid.getAnimalList().size() + " animals in list " + grid.getCoordinates() + " " + grid.getAnimalList().toString());
+		System.out.println("" + grid.getAnimalList().size() + " animals in list, " + grid.getAnimalList().toString());
 		
 	}
 	

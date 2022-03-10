@@ -31,6 +31,7 @@ public class Runner {
 		Thread.sleep(300);
 		System.out.println("END");
 		System.out.println("Number of movements " + count);
+		Thread.sleep(300);
 		Printer.printMatrix();
 		Printer.printExistingAnimals();
 	}
