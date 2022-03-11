@@ -5,7 +5,6 @@ import app.data.DB;
 
 public class GridTools {
 	
-	
 	/**
 	 * Loops throw all animal list if animal coordinates are the same as the grid coordinates
 	 * puts animal in the list inside of grid
